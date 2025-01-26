@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Recipe from './components/Recipe';  // Імпортуємо компонент Recipe
-import contacts from './contacts.json';  // Імпортуємо дані з JSON файлу
+import Recipe from './components/Recipe';  
+import contacts from './contacts.json'; 
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    // Завантажуємо дані з файлу
+
     setRecipes(contacts);
   }, []);
 

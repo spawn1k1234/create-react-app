@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaPhone } from 'react-icons/fa';  // Правильный импорт иконки
+import { FaPhone } from 'react-icons/fa'; 
 
 const RecipeInfo = ({ text, icon }) => {
-  // В зависимости от пропса icon, можно отображать различные иконки
-  const Icon = FaPhone; // Используем одну иконку для примера
+  const Icon = FaPhone; 
 
   return (
     <div className="recipe-info">
-      <Icon /> {text}  {/* Иконка и текст */}
+      <Icon /> {text}  {}
     </div>
   );
 };
