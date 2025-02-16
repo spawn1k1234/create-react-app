@@ -1,22 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import RecipeInfo from './RecipeInfo';  
+import styled from "styled-components";
+import Difficulty from "./Difficulty";
 
+const RecipeCard = styled.div`
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  // ${({ difficulty }) => difficulty === 3 && "border: 2px solid red;"}
+  
+`;
 
-const Recipe = ({ recipe }) => {
+const RecipeImage = styled.img`
+  width: 100%;
+  border-radius: 10px;
+`;
+
+const Recipe = ({ name, time, servings, calories, image, difficulty }) => {
   return (
-    <div className="recipe">
-      <h2>{recipe.name}</h2>
-      <RecipeInfo text={recipe.number} icon="phone" />  {}
-    </div>
+    <RecipeCard difficulty={difficulty}>
+      <RecipeImage src={image} alt={name} />
+      <h3>{name}</h3>
+      <p>⏳ {time} min | 🍽 {servings} servings | 🔥 {calories} calories</p>
+      <Difficulty level={difficulty} />
+    </RecipeCard>
   );
-};
-
-Recipe.propTypes = {
-  recipe: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired
-  }).isRequired
 };
 
 export default Recipe;
